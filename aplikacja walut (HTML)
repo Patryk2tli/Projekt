@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikacja Walutowa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="home" class="screen active">
+      <div class="top">Aplikacja Walutowa - Strona główna</div>
+      <div class="grid2">
+        <button onclick="showScreen('settings')">Ustawienia konta</button>
+        <button onclick="showScreen('app')">Ustawienia aplikacji</button>
+      </div>
+      <div class="grid3">
+        <button onclick="showScreen('rates')">Aktualne kursy</button>
+        <button onclick="showScreen('history')">Historia kursów</button>
+        <button onclick="showScreen('calculator')">Kalkulator</button>
+      </div>
+    </div>
+
+    <div id="calculator" class="screen">
+      <button class="back" onclick="showScreen('home')">Powrót</button>
+      <h2>Kalkulator walut</h2>
+      <input id="amount" type="text" inputmode="decimal" placeholder="Kwota">
+      <select id="from"><option>PLN</option><option>USD</option><option>EUR</option><option>GBP</option><option>CHF</option></select>
+      <select id="to"><option>USD</option><option>PLN</option><option>EUR</option><option>GBP</option><option>CHF</option></select>
+      <button onclick="convertCurrency()">Przelicz</button>
+      <input id="result" readonly placeholder="Wynik">
+    </div>
+
+    <div id="rates" class="screen">
+      <button class="back" onclick="showScreen('home')">Powrót</button>
+      <h2>Aktualne kursy</h2>
+      <div class="line">USD = 3.85 PLN</div>
+      <div class="line">EUR = 4.20 PLN</div>
+      <div class="line">GBP = 4.80 PLN</div>
+      <div class="line">CHF = 4.35 PLN</div>
+      <div class="line">PLN = 1.00 PLN</div>
+    </div>
+
+    <div id="history" class="screen">
+      <button class="back" onclick="showScreen('home')">Powrót</button>
+      <h2>Historia kursów</h2>
+      <div id="historyList"></div>
+    </div>
+
+    <div id="settings" class="screen">
+      <button class="back" onclick="showScreen('home')">Powrót</button>
+      <h2>Ustawienia konta</h2>
+      <input placeholder="Imię i nazwisko">
+      <input placeholder="Email">
+      <input type="password" placeholder="Hasło">
+    </div>
+
+    <div id="app" class="screen">
+      <button class="back" onclick="showScreen('home')">Powrót</button>
+      <h2>Ustawienia aplikacji</h2>
+      <input placeholder="Domyślna waluta">
+      <input placeholder="Język">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
