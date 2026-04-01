@@ -1,0 +1,26 @@
+const rates = { PLN:1, USD:3.85, EUR:4.20, GBP:4.80, CHF:4.35 };
+const historyData = [];
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(screen => {
+    screen.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+}
+
+function convertCurrency() {
+  const amount = parseFloat(document.getElementById('amount').value) || 0;
+  const from = document.getElementById('from').value;
+  const to = document.getElementById('to').value;
+
+  const inPln = amount * rates[from];
+  const result = (inPln / rates[to]).toFixed(2);
+  document.getElementById('result').value = result + ' ' + to;
+
+  historyData.unshift(`${amount} ${from} = ${result} ${to}`);
+  const list = document.getElementById('historyList');
+  list.innerHTML = '';
+  historyData.slice(0, 5).forEach(item => {
+    list.innerHTML += `<div class="line">${item}</div>`;
+  });
+}
