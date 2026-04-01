@@ -1,0 +1,12 @@
+body { font-family: Arial, sans-serif; background:#ddd; }
+.container { width: 420px; margin: 20px auto; }
+.screen { display:none; background:white; padding:20px; box-shadow:0 0 8px rgba(0,0,0,.2); }
+.active { display:block; }
+.top { background:#67d84b; padding:18px; text-align:center; font-weight:bold; margin-bottom:10px; }
+.grid2, .grid3 { display:grid; gap:10px; }
+.grid2 { grid-template-columns:1fr 1fr; }
+.grid3 { grid-template-columns:1fr 1fr 1fr; margin-top:10px; }
+button { padding:10px; cursor:pointer; }
+.back { margin-bottom:10px; }
+input, select { display:block; width:100%; margin:10px 0; padding:10px; }
+.line { border:1px solid #999; padding:10px; margin:8px 0; }
